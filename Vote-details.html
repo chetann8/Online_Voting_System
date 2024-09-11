@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="votingApp">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Vote Details - Online Voting System</title>
+ <link rel="stylesheet" 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="stylesheet" href="styles.css">
+ <style>
+ body {
+ margin: 0;
+ padding: 0;
+ font-family: Arial, sans-serif;
+ background-image: url('https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTTZO0Bu4zJ9dk6BjVQDJIp0m55gFvhNEhhQ7TI6rTFg&s'); /* Specify your background image path */
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ opacity: 0.8; /* Set opacity for background image */
+ }
+ .container {
+ background-color: transparent; /* Set background color to transparent */
+ padding: 20px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+ text-align: center; /* Center align content */
+ max-width: 600px; /* Limit container width */
+ }
+ .card {
+ border: none; /* Remove card border */
+ background-color: rgba(255, 255, 255, 0.9); /* Set background color with opacity for 
+card */
+ border-radius: 10px; /* Add border radius to card */
+ }
+ .card-header {
+ background-color: #007bff; /* Set background color for card header */
+ color: #fff; /* Set text color for card header */
+ border-radius: 10px 10px 0 0; /* Add border radius to top corners */
+ padding: 15px 20px; /* Add padding to card header */
+ }
+ .card-body {
+ padding: 30px;
+ }
+ .btn-primary {
+ background-color: #007bff;
+ border-color: #007bff;
+ border-radius: 5px; /* Add border radius to button */
+ padding: 10px 20px; /* Add padding to button */
+ margin-top: 20px; /* Add margin to button */
+ }
+ .btn-primary:hover {
+ background-color: #0056b3;
+ border-color: #0056b3;
+ }
+ .mt-3 {
+ margin-top: 20px;
+ }
+ h1 {
+ margin-bottom: 30px; /* Add bottom margin to heading */
+ }
+ </style>
+</head>
+<body ng-controller="VoteDetailsController">
+<div class="container">
+ <h1>Online Voting System - Vote Details</h1>
+ <div class="card">
+ <div class="card-header">
+ You Voted For
+ </div>
+ <div class="card-body">
+ <!--<p>{{ votedCandidate.name }}</p>-->
+<p>BHARTIYA JANATA PARTY (BJP)</p>
+ </div>
+ </div>
+ <a href="thank-you.html" class="btn btn-primary mt-3">Continue</a>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="controllers/voteDetailsController.js"></script>
+<script src="services/votingService.js"></script>
+</body>
+</html>
