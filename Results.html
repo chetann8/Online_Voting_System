@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="votingApp">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Results - Online Voting System</title>
+ <link rel="stylesheet" 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="stylesheet" href="styles.css">
+ <style>
+ body {
+ margin: 0;
+ padding: 0;
+ font-family: Arial, sans-serif;
+ background-image: 
+url('https://st.depositphotos.com/1186033/4420/i/450/depositphotos_44207577-stock-photoelection-results.jpg'); /* Specify your background image path */
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ opacity: 0.8; /* Set opacity for background image */
+ }
+ .container {
+ background-color: rgba(255, 255, 255, 0.9); /* Set background color with opacity for 
+content */
+ padding: 20px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+ max-width: 600px; /* Limit container width */
+ }
+ .card {
+ border: none; /* Remove card border */
+ background-color: transparent; /* Set card background color to transparent */
+ border-radius: 10px; /* Add border radius to card */
+ }
+ .card-header {
+ background-color: #007bff; /* Set background color for card header */
+ color: #fff; /* Set text color for card header */
+ border-radius: 10px 10px 0 0; /* Add border radius to top corners */
+ padding: 15px 20px; /* Add padding to card header */
+ }
+ .card-body {
+ padding: 30px;
+ }
+ .list-group-item {
+ background-color: rgba(255, 255, 255, 0.7); /* Set background color with opacity for 
+list items */
+ margin-bottom: 5px;
+ border: none; /* Remove list item border */
+ border-radius: 5px; /* Add border radius to list items */
+ }
+ .btn-primary {
+ background-color: #007bff;
+ border-color: #007bff;
+ border-radius: 5px; /* Add border radius to button */
+ padding: 10px 20px; /* Add padding to button */
+ margin-top: 20px; /* Add margin to button */
+ }
+ .btn-primary:hover {
+ background-color: #0056b3;
+ border-color: #0056b3;
+ }
+ .mt-3 {
+ margin-top: 20px;
+ }
+ h1 {
+ text-align: center; /* Center align heading */
+ margin-bottom: 30px; /* Add bottom margin to heading */
+ }
+ </style>
+</head>
+<body ng-controller="ResultsController">
+<div class="container">
+ <h1>Online Voting System - Results</h1>
+ <div class="card">
+ <div class="card-header">
+ Results
+ </div>
+ <div class="card-body">
+ <ul class="list-group">
+ <li class="list-group-item" ng-repeat="candidate in results">
+ {{ candidate.name }}: {{ candidate.votes }} votes
+ </li>
+ </ul>
+ </div>
+ </div>
+ <a href="index.html" class="btn btn-primary btn-block mt-3">Home</a>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="controllers/resultsController.js"></script>
+<script src="services/votingService.js"></script>
+</body>
+</html>
