@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="votingApp">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Vote - Online Voting System</title>
+ <link rel="stylesheet" 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="stylesheet" href="styles.css">
+ <style>
+ body {
+ margin: 0;
+ padding: 0;
+ font-family: Arial, sans-serif;
+ background-image: url('https://c8.alamy.com/comp/2EXTK31/indian-voter-handwith-voting-sign-and-ink-pointing-vote-for-india-behind-on-election-commission-of-indiabackground-2EXTK31.jpg'); /* Specify your background image path */
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ opacity: 0.8; /* Set opacity for background image */
+ }
+ .container {
+ background-color: rgba(255, 255, 255, 0.9); /* Set background color with opacity for 
+content */
+ padding: 20px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+ max-width: 500px; /* Limit container width */
+ }
+ .card {
+ border: none; /* Remove card border */
+ }
+ .card-header {
+ background-color: #007bff; /* Set background color for card header */
+ color: #fff; /* Set text color for card header */
+ }
+ .btn-primary {
+ background-color: #007bff;
+ border-color: #007bff;
+ }
+ .btn-primary:hover {
+ background-color: #0056b3;
+ border-color: #0056b3;
+ }
+ .mt-3 {
+ margin-top: 20px;
+ }
+ </style>
+</head>
+<body ng-controller="VoteController">
+<div class="container">
+ <h1 class="text-center mt-5">Online Voting System - Vote</h1>
+ <div class="card mt-3">
+ <div class="card-header">
+ PARTY
+</div>
+ <div class="card-body">
+ <div class="form-group">
+ <label for="party">Select Party</label>
+ <select class="form-control" id="party" ng-model="selectedParty" required>
+ <option value="">Select a party</option>
+ <option value="BJP">BJP</option>
+ <option value="Congress">Congress</option>
+ <option value="Other">Other</option>
+ <option value="NOTA">NOTA</option>
+ </select>
+ </div>
+ </div>
+ </div>
+ <button class="btn btn-primary mt-3" ng-click="submitVote()">Submit Vote</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="controllers/voteController.js"></script>
+<script src="services/votingService.js"></script>
+</body>
+</html>
